@@ -1,12 +1,4 @@
 <?php
-
-$strArr = [
-    ["4","A","B","C","D","A-B","B-D","B-C","D"], //A-B-D
-    ["7","A","B","C","D","E","F","G","A-B","A-E","B-C","C-D","D-F","E-D","F-G"], //A-E-D-F-G
-    ["5","A","B","C","D","F","A-B","A-C","B-C","C-D","D-F"], //A-C-D-F 
-    ["5","A","W","X","Y","Z","A-W","W-X","W-Y","X-Y","Y-Z","X-Z"] //A-W-Y-Z
-];
-
 /*
     Algorithm 
     1. splice array, get nodes, convert paths to array
@@ -19,14 +11,11 @@ $strArr = [
     8. go back to (3)
 */
 
-$myArr = $strArr[3];
-$nodes = array_slice($myArr, 1, $myArr[0]);
-$path = array_slice($myArr, $myArr[0]+1, count($myArr));
-
-echo shortestPath($nodes, $path);
-
-function shortestPath($nodes, $path)
+function shortestPath($strArr)
 {
+    $nodes = array_slice($strArr, 1, $strArr[0]);
+    $path = array_slice($strArr, $strArr[0]+1, count($strArr));
+    
     return iterateNode($nodes, $path);
 }
 

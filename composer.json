@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "files": [
+            "shortest-path.php"
+        ]
+    },
     "require-dev": {
         "phpunit/phpunit": "^9"
     }
